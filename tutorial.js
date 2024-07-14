@@ -20,8 +20,8 @@ const shape = (n) => {
   return t.lines();
 }
 
-const shaft = bt.scale(shape(3), [2, 150])
-const vanes = bt.scale(shape(11), [8, 30])
+const shaft = bt.scale(shape(3), [3, bt.randInRange(130, 200)])
+const vanes = bt.scale(shape(11), [bt.randInRange(4, 12), 30])
 bt.translate(vanes, [0, bt.bounds(shaft).cb[1] - bt.bounds(vanes).cb[1]])
 
 const feather = [...shaft, ...vanes]
@@ -31,7 +31,7 @@ bt.resample(feather, 4)
 
 bt.iteratePoints(feather, (pt, t) => {
   const [x, y] = pt
-  return [x - 0.002*(width/2-y)*(width/2-y), y]
+  return [x - 0.002 *(width/2-y)*(width/2-y), y]
 })
 
 bt.rotate(feather, 135)
