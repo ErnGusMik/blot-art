@@ -6,12 +6,12 @@
 const width = 180;
 const height = 180;
 
-const tvWidth = 230
-const tvHeight = 180
-const tvBezel = 7
-const tvCornerRad = 2
-const tvScreenDeg = -20
-const tvPanelW = 40
+const tvWidth = bt.randInRange(150, 320) // default: 230
+const tvHeight = bt.randInRange(180, 250) // default: 180
+const tvBezel = bt.randInRange(5, 15) // default: 7
+const tvCornerRad = bt.randInRange(1, 4) // default: 2
+const tvScreenDeg = -20 //default: -20
+const tvPanelW = bt.randInRange(35, 50) // default: 40
 
 setDocDimensions(width, height);
 
@@ -31,7 +31,7 @@ const getChord = (radius, arcDeg) => {
 
 const createGrill = (length, distanceBetween, width) => {
   const lineCount = width / distanceBetween
-  if (typeof lineCount !== 'integer') throw new Error('createGrill(): width / distanceBetween must be an integer!')
+  // if (typeof lineCount !== 'integer') throw new Error('createGrill(): width / distanceBetween must be an integer!')
 
   for (let i = 0; i++; i >= lineCount/2) {
     t.forward(length)
@@ -93,18 +93,84 @@ t.forward(tvPanelW * (6/8) - 2 * tvCornerRad)
 t.arc(-90, tvCornerRad)
 t.forward(getChord(tvHeight, tvScreenDeg) / 2)
 
+// Maybe create a sort of 'grill' at the top of the control panel
 t.up()
-t.arc(-90, tvCornerRad)
-t.forward((tvPanelW * (6/8) - 2 * tvCornerRad) / 2)
-t.right(90).forward(getChord(tvHeight, tvScreenDeg) / 2)
+t.right(90)
+// t.right(90).forward(getChord(tvHeight, tvScreenDeg) / 2 / 2).left(90)
 t.down()
 
-t.forward(100)
+const length = tvPanelW * (6/8)
+
+t.forward(length)
+    .right(90).up()
+    .forward(2).right(90).down()
+    .forward(length)
+    .up().left(90).forward(2)
+    .left(90).down()
+t.forward(length)
+    .right(90).up()
+    .forward(2).right(90).down()
+    .forward(length)
+    .up().left(90).forward(2)
+    .left(90).down()
+
+t.up().right(90).forward(getChord(tvHeight, tvScreenDeg) / 4 / 2)
+t.left(90).forward(length / 2).down()
+
+t.arc(-360, getChord(tvHeight, tvScreenDeg) / 4 / 2)
 
 
+const verticalLen = getChord(tvHeight, tvScreenDeg) / 2
+const between = tvPanelW / 16
 
+t.up().forward(length / 2).right(90)
+t.forward(getChord(tvHeight, tvScreenDeg) * (3/4) + tvBezel + tvCornerRad)
+t.left(90).forward(tvPanelW * (1/8) - between).left(90)
+t.down()
 
-
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
+    .left(90).up()
+    .forward(between).left(90).down()
+    .forward(verticalLen)
+    .up().right(90).forward(between)
+    .right(90).down()
+t.forward(verticalLen)
 
 
 
