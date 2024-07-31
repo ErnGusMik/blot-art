@@ -192,8 +192,8 @@ t.right(100).forward(getChord(tvHeight, tvScreenDeg) + tvCornerRad * 2)
 // } else if (randScene <= 3) {
 // SCENE 3
 // BUILDING 1
-  t.left(180).down()
-  t.forward(getChord(tvHeight, tvScreenDeg)).right(90).forward(getChord(tvWidth, tvScreenDeg) / 6)
+t.left(180).down()
+t.forward(getChord(tvHeight, tvScreenDeg)).right(90).forward(getChord(tvWidth, tvScreenDeg) / 6)
 t.right(90).forward(getChord(tvHeight, tvScreenDeg))
 t.up()
 t.right(90).forward(getChord(tvWidth, tvScreenDeg) / 6 - 2)
@@ -215,10 +215,9 @@ t.right(90).forward(4).up().forward(getChord(tvHeight, tvScreenDeg) / 10).right(
 t.forward(4).right(90).forward(4).right(90).forward(4)
 t.right(90).forward(4).up().forward(getChord(tvHeight, tvScreenDeg) / 10).right(90).down()
 t.forward(4).right(90).forward(4).right(90).forward(4).right(90).forward(4).up()
-t.right(90).forward(getChord(tvWidth, tvScreenDeg) / 6 /2).down()
+t.right(90).forward(getChord(tvWidth, tvScreenDeg) / 6 / 2).down()
 t.forward(4).right(90).forward(4).right(90).forward(4).right(90).forward(4).right(90).up()
 t.forward(4).right(90).forward(getChord(tvHeight, tvScreenDeg) / 10).down()
-
 t.forward(4).right(90).forward(4).right(90).forward(4).right(90).forward(4).right(90).up()
 t.forward(getChord(tvHeight, tvScreenDeg) / 10).down()
 t.forward(4).right(90).forward(4).right(90).forward(4).right(90).forward(4).right(90).up()
@@ -237,6 +236,7 @@ t.forward(4).right(90).forward(4).right(90).forward(4).right(90).forward(4).righ
 t.forward(getChord(tvHeight, tvScreenDeg) / 10).up()
 t.left(90).forward(getChord(tvWidth, tvScreenDeg) / 6 - 2 - getChord(tvWidth, tvScreenDeg) / 12 - 4)
 t.down()
+// BUILDING 2
 t.left(90).forward(getChord(tvHeight, tvScreenDeg) - 5).right(90).down()
 t.forward(getChord(tvWidth, tvScreenDeg) / 12).right(90).forward(getChord(tvHeight, tvScreenDeg) - 15).up()
 t.right(90).forward(getChord(tvWidth, tvScreenDeg) / 12 - 1)
@@ -253,13 +253,37 @@ t.right(90).forward(3.5).up().forward(getChord(tvHeight, tvScreenDeg) / 10).righ
 t.forward(3.5).right(90).forward(3.5).right(90).forward(3.5)
 t.right(90).forward(3.5).up().forward(getChord(tvHeight, tvScreenDeg) / 10).right(90).down()
 t.forward(3.5).right(90).forward(3.5).right(90).forward(3.5)
+t.right(90).forward(3.5).up().right(90).forward(getChord(tvWidth, tvScreenDeg) / 12 - 1)
+t.right(90).forward(getChord(tvHeight, tvScreenDeg) / 5 + getChord(tvHeight, tvScreenDeg) / 10 * 5)
+t.left(90).forward(getChord(tvWidth, tvScreenDeg) / 12).left(90).forward(10)
 
+// BUILDING 3
+t.down()
+t.forward(30).left(90).forward(getChord(tvWidth, tvScreenDeg) / 12).up()
+t.left(90).forward(3).left(90).down()
+t.forward(getChord(tvWidth, tvScreenDeg) / 12 - 2).right(135).forward(3).left(90).forward(3)
+t.right(135).forward(getChord(tvWidth, tvScreenDeg) / 12 - 2).up()
+t.left(90).forward(4).left(90).down().forward(getChord(tvWidth, tvScreenDeg) / 12 - 2).right(90)
+t.forward(getChord(tvHeight, tvScreenDeg) / 10 -  1).right(90).forward(getChord(tvWidth, tvScreenDeg) / 12 - 2)
+t.up().left(90).forward(2).left(90).down().forward(getChord(tvWidth, tvScreenDeg) / 12 - 2).right(90)
+t.forward(getChord(tvHeight, tvScreenDeg) / 10 - 1).right(90).forward(getChord(tvWidth, tvScreenDeg) / 12 - 2)
+t.right(90).up().forward((getChord(tvHeight, tvScreenDeg) / 10 - 1) * 2 + 6 + 2 * Math.sqrt(4.5) + 3)
+t.right(90).forward(getChord(tvWidth, tvScreenDeg) / 12)
 
+t.forward(getChord(tvWidth, tvScreenDeg) / 3).right(90).forward(30).left(180)
+t.down()
+
+// BUILDING 4
+t.forward(getChord(tvHeight, tvScreenDeg) - 30).right(90).forward(getChord(tvWidth, tvScreenDeg) / 6 - 1)
+t.right(90).forward(getChord(tvHeight, tvScreenDeg) - 55)
+t.right(90).forward(getChord(tvWidth, tvScreenDeg) / 12 - 1).left(90).forward(25)
+t.down()
+t.right(90).forward(2)
 
 // } else {
 //   t.left(180).forward(tvBezel).right(90)
 // }
-  
+
 // t.down()
 // t.forward(getChord(tvWidth, tvScreenDeg)).forward(tvCornerRad + tvBezel)
 // t.arc(-90, tvCornerRad)
